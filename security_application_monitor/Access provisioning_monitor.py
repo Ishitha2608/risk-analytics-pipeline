@@ -43,3 +43,6 @@ print("Access Requests Processed:", records_received)
 
 print("\nSample Access Provisioning Records")
 print(df[["id", "name", "email", "role", "access_status", "system"]].head())
+
+# Export data for dashboard
+df.to_csv("access_provisioning_metrics.csv", index=False)
