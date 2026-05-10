@@ -1,6 +1,26 @@
 Enterprise Risk Monitoring Pipeline:
 
-This module demonstrates a data analytics pipeline for monitoring operational and compliance risks. The pipeline transforms issue tracking data into structured analytics models used to monitor risk signals and SLA breaches.
+This module demonstrates a data analytics pipeline for monitoring operational and compliance risks. The pipeline transforms issue tracking data into structured analytics models used to monitor risk metrics and SLA breaches.
+
+
+             +-----------------------------+
+             |  Enterprise Risk Monitoring |
+             |        Analytics Module     |
+             +-------------+---------------+
+                           |
+                           | Jira Issues
+                           v
+                    Python ETL Pipeline
+                    (Jira REST API)
+                           |
+                           v
+                      BigQuery Tables
+                           |
+                           v
+                    Risk Scoring Model
+                           |
+                           v
+                    Risk Analytics Dashboard
 
 Risk Monitoring Architecture: Jira API → Python ingestion script → BigQuery raw tables→ SQL transformation → Risk scoring model → Dashboard
 
