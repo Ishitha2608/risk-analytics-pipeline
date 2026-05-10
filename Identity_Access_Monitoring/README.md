@@ -1,12 +1,6 @@
-#Security & Risk Monitoring Platform
+# Identity & Access Provisioning Monitoring
 
-This project demonstrates a lightweight security monitoring platform that combines:
-
-->Access provisioning monitoring ->Enterprise risk analytics ->Security dashboards
-
-The goal is to simulate how security teams monitor identity access activity, operational risks, and system integrations using automated data pipelines and dashboards.
-
-The platform contains two main modules:
+This module simulates how security teams monitor user access provisioning across enterprise systems. It focuses on tracking access requests, role assignments, and system integration health using automated data pipelines and dashboards.
 
              +-----------------------------+
              |  Security Monitoring Module |
@@ -20,61 +14,75 @@ The platform contains two main modules:
                            v
                     Monitoring Dashboard
 
+---
 
-             +-----------------------------+
-             |  Enterprise Risk Monitoring |
-             |        Analytics Module     |
-             +-------------+---------------+
-                           |
-                           | Jira Issues
-                           v
-                    Python ETL Pipeline
-                    (Jira REST API)
-                           |
-                           v
-                      BigQuery Tables
-                           |
-                           v
-                    Risk Scoring Model
-                           |
-                           v
-                    Risk Analytics Dashboard
-Access Provisioning Monitoring:
+## Overview
 
-This module simulates monitoring of identity access provisioning across security systems. The script pulls identity records from an API, assigns access roles and statuses, and generates monitoring metrics used by dashboards. This mirrors how organizations monitor IAM provisioning workflows and system integrations.
+The goal of this module is to replicate real-world Identity and Access Management (IAM) monitoring by:
 
-Access Monitoring Architecture: Identity API → Python Access Monitor → Monitoring Dataset → Dashboard
+- Tracking user access requests  
+- Monitoring provisioning status  
+- Evaluating system integration performance  
+- Generating metrics for security visibility  
 
-Access Monitoring Script:-
+---
 
-security_application_monitor/access_provisioning_monitor.py
+## Architecture
 
-The script performs the following steps:
+Identity API → Python Monitoring Script → Monitoring Dataset → Dashboard
 
--Retrieves user records from an API
--Assigns simulated access roles
--Generates access provisioning statuses
--Measures integration health metrics
--Exports the monitoring dataset
-** Access Monitoring Metrics**
+---
 
-The dataset produced by the script includes metrics such as:
+## Implementation
 
--Total access requests
--Access status distribution (Approved, Pending, Rejected, Revoked)
--Access by role (Employee, Contractor, Admin)
--API response time
--API status code
--Records processed
-These metrics simulate monitoring of identity provisioning pipelines and security integrations.
+**Script Location:**  
+`Identity_Access_Monitoring/access_provisioning_monitor.py`
 
-Access Monitoring Dashboard:-
+---
 
-The dashboard visualizes identity activity including:
+## What the Script Does
 
--total access requests
--access status distribution
-[access by role -system integration health metrics
-This demonstrates how security teams track access governance and identity lifecycle events.
+- Retrieves user access records from an API  
+- Assigns simulated roles (Employee, Contractor, Admin)  
+- Generates provisioning statuses (Approved, Pending, Rejected, Revoked)  
+- Measures API response time and system health  
+- Exports processed data for dashboard visualization  
 
-** Dashboard export: security_application_monitor/security_access_monitoring_dashboard.pdf
+---
+
+## Key Metrics
+
+The system generates:
+
+- Total access requests  
+- Access status distribution  
+- Access by role  
+- API response time  
+- API status codes  
+- Total records processed  
+
+---
+
+## Dashboard Insights
+
+The dashboard provides visibility into:
+
+- Access request trends  
+- Provisioning status distribution  
+- Role-based access patterns  
+- System integration performance  
+
+---
+
+## Why This Matters
+
+This module demonstrates how organizations:
+
+- Monitor IAM provisioning workflows  
+- Detect delays or failures in access requests  
+- Track system reliability and integrations  
+- Build real-time visibility into access control processes  
+
+---
+
+            
